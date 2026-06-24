@@ -37,7 +37,7 @@ The repo has a focused public story, a five-skill delivery bundle, a Claude-comp
 Lead with the delivery bundle and the one-command installer:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.1/install.sh | bash
 ```
 
 Keep personal, client-specific, local-ops, or experimental skills in private repos unless they receive their own public-readiness review.

@@ -7,7 +7,7 @@ Agent Delivery Kit skills live under `codex/skills` and can be installed into an
 Install from GitHub:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.1/install.sh | bash
 ```
 
 Install from a clone:
@@ -23,6 +23,16 @@ The default destination is:
 ```text
 ~/.codex/skills
 ```
+
+That is all the installer does: it copies skill folders into your agent's skill directory. It does not configure a product repo and it does not start a workflow by itself.
+
+After install, open the project repo you want the agent to work on and type:
+
+```text
+Use $delivery-kit-setup to configure this repository for the Agent Delivery Kit.
+```
+
+Then use [Getting started](getting-started.md) for the normal run-through.
 
 ## Custom Skill Roots
 

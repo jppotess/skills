@@ -1,5 +1,7 @@
 # Skill Reference
 
+For the normal end-to-end flow, read [Getting started](getting-started.md) first. This page is the short reference for what each skill is responsible for.
+
 ## delivery-kit-setup
 
 Configures repo-local policy for the delivery bundle. Use this first in a new project so future agents know the repository's PR base rules, issue-tracker states, review routing, evidence expectations, and optional tooling.

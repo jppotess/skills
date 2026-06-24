@@ -9,7 +9,7 @@ This is a small public bundle for Codex-first workflows with Claude-compatible m
 One-command install for Codex-compatible skill directories:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.1/install.sh | bash
 ```
 
 From a local clone:
@@ -35,6 +35,42 @@ Inspect what would be installed:
 ./install.sh --list
 ```
 
+## Start Here: Normal Run-Through
+
+Installing this repo only makes the skills available to your agent. You use them by opening a real project repo in Codex or another skill-aware agent and typing prompts like `Use $delivery-kit-setup ...`.
+
+Normal flow:
+
+1. Install the skills once.
+2. Open the product/project repo you want the agent to work on.
+3. Run `$delivery-kit-setup` once in that repo so the agent writes local policy docs for PR bases, checks, issue states, evidence, and review rules.
+4. For a scoped feature or bug with a written spec, run `$spec-to-ship`.
+5. For an issue you want driven through implementation and review routing, run `$delivery-autopilot`.
+6. When code is ready for GitHub review, run `$ship-pr`.
+7. `$coderabbit-gate` runs inside the PR flow when CodeRabbit CLI is available, or you can invoke it directly.
+
+Copy/paste first prompt inside your project repo:
+
+```text
+Use $delivery-kit-setup to configure this repository for the Agent Delivery Kit. Infer what you can from the repo, create concise docs under docs/agents/ if that fits the repo, and tell me what assumptions remain.
+```
+
+Then use one of these:
+
+```text
+Use $spec-to-ship with ./SPEC.md as the source of truth. Initialize .zenith/, derive acceptance criteria, implement in checkpoints, validate, run final gap review, then route delivery through review and PR packaging if needed.
+```
+
+```text
+Use $delivery-autopilot on ISSUE-123 and run the appropriate review chain before PR handoff.
+```
+
+```text
+Use $ship-pr to package the current branch into the correct GitHub PR and make the handoff review-ready.
+```
+
+Full walkthrough: [Getting started](docs/getting-started.md).
+
 ## Skills
 
 | Skill | Use it for |
@@ -45,27 +81,27 @@ Inspect what would be installed:
 | `ship-pr` | Package, validate, push, create or update, and follow through on GitHub pull requests. |
 | `coderabbit-gate` | Run and triage local CodeRabbit CLI review without blocking on missing tooling or low-value nits. |
 
-## Quick Start
+## Short Examples
 
-After installing, run the setup skill inside each project repo that should use the delivery workflow:
+Configure a repo:
 
 ```text
 Use $delivery-kit-setup to configure this repository for the delivery skill bundle.
 ```
 
-For a larger implementation task with a written spec:
+Run a spec:
 
 ```text
 Use $spec-to-ship with ./SPEC.md as the source of truth. Initialize .zenith/, derive acceptance criteria, implement in checkpoints, validate, run final gap review, then route delivery through review and PR packaging if needed.
 ```
 
-For an issue or task that should be driven end to end:
+Drive an issue:
 
 ```text
 Use $delivery-autopilot on ISSUE-123 and run the appropriate review chain before PR handoff.
 ```
 
-For PR packaging:
+Package a PR:
 
 ```text
 Use $ship-pr to package the current branch into the correct GitHub PR and make the handoff review-ready.
@@ -96,6 +132,7 @@ The delivery loop here is built around five habits:
 ## Documentation
 
 - [Installation](docs/installation.md)
+- [Getting started](docs/getting-started.md)
 - [Skill reference](docs/skill-reference.md)
 - [Publication review](docs/publication-review.md)
 - [Launch notes](docs/launch-notes.md)
