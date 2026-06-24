@@ -70,6 +70,7 @@ if [[ "${LIST_ONLY}" -eq 1 ]]; then
   exit 0
 fi
 
+# Works both from a checked-out file and from `curl ... | bash`.
 SCRIPT_SOURCE="${BASH_SOURCE[0]:-${0}}"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${SCRIPT_SOURCE}")" >/dev/null 2>&1 && pwd || pwd)"
 SOURCE_ROOT=""
