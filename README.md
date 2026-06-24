@@ -9,7 +9,7 @@ This is a small public bundle for Codex-first workflows with Claude-compatible m
 One-command install for Codex-compatible skill directories:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.0/install.sh | bash
 ```
 
 From a local clone:

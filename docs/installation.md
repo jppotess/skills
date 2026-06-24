@@ -7,7 +7,7 @@ Agent Delivery Kit skills live under `codex/skills` and can be installed into an
 Install from GitHub:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.0/install.sh | bash
 ```
 
 Install from a clone:
