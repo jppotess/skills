@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ship PR"
+  short_description: "Package, review, push, and hand off a clean GitHub PR"
+  default_prompt: "Use $ship-pr to package the current branch into the correct GitHub PR, run local review gates when available, fill required template sections, make the PR pass, and resolve actionable review comments."

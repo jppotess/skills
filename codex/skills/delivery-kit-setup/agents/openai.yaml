@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delivery Kit Setup"
+  short_description: "Configure repo policy for the Agent Delivery Kit"
+  default_prompt: "Use $delivery-kit-setup to configure this repository for the delivery skill bundle."

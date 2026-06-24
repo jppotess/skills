@@ -1,0 +1,4 @@
+interface:
+  display_name: "CodeRabbit Gate"
+  short_description: "Run and triage local CodeRabbit review gates"
+  default_prompt: "Use $coderabbit-gate to run a local CodeRabbit review for the current branch or working tree."

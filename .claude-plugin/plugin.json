@@ -1,0 +1,10 @@
+{
+  "name": "agent-delivery-kit",
+  "skills": [
+    "./codex/skills/delivery-kit-setup",
+    "./codex/skills/spec-to-ship",
+    "./codex/skills/delivery-autopilot",
+    "./codex/skills/ship-pr",
+    "./codex/skills/coderabbit-gate"
+  ]
+}

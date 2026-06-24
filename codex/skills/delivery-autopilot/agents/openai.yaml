@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delivery Autopilot"
+  short_description: "Drive implementation through validation, review routing, and handoff"
+  default_prompt: "Use $delivery-autopilot to drive this implementation task through context gathering, validation, review routing, handoff, and delivery-state classification."
