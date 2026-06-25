@@ -1,18 +1,34 @@
 # Agent Delivery Kit
 
+[![skills.sh](https://skills.sh/b/jppotess/skills)](https://skills.sh/jppotess/skills)
+
 Reusable agent skills for taking software work from spec to verified, review-ready delivery.
 
 This is a small public bundle for Codex-first workflows with Claude-compatible metadata. The skills are intentionally workflow-oriented: they preserve the original request, keep reopening gaps, route review, package pull requests, and make the final delivery state explicit instead of stopping at plausible progress.
 
 ## Install
 
-Guided setup lets you choose Codex, Claude-compatible, generic agents, both Codex and Claude, or a custom skill root:
+Recommended setup uses `skills.sh`, which lets you choose which skills to install and which coding agents to install them for:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/setup.sh | bash
+npx skills@latest add jppotess/skills
 ```
 
-From a local clone:
+In the installer, pick the skills you want and the agents you use. For the normal delivery workflow, include `delivery-kit-setup`.
+
+Then open your project repo in your agent and run:
+
+```text
+Use $delivery-kit-setup to configure this repository for the Agent Delivery Kit.
+```
+
+Fallback setup script:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.3/setup.sh | bash
+```
+
+From a local clone, you can also run the fallback setup script:
 
 ```bash
 git clone https://github.com/jppotess/skills.git
@@ -32,7 +48,7 @@ Non-interactive examples:
 Direct Codex install is still available:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.3/install.sh | bash
 ```
 
 Override the destination when using the direct installer:

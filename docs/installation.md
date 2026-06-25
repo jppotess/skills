@@ -2,12 +2,34 @@
 
 Agent Delivery Kit skills live under `codex/skills` and can be installed into any compatible skill root.
 
-## Guided Setup
+## Recommended: skills.sh
 
-Use guided setup when you want to choose the target agent interactively:
+Use `skills.sh` when you want the standard skill installer experience: choose the skills, choose the target agents, and let the installer place them correctly.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/setup.sh | bash
+npx skills@latest add jppotess/skills
+```
+
+In the installer:
+
+1. Choose the target agent or agents you use.
+2. Choose the skills you want.
+3. Include `delivery-kit-setup` for the normal workflow.
+
+Then open your project repo in your agent and run:
+
+```text
+Use $delivery-kit-setup to configure this repository for the Agent Delivery Kit.
+```
+
+This matches the setup pattern used by public skill repos that rely on `skills.sh`.
+
+## Fallback Guided Setup
+
+Use the bundled setup script if you do not want to use `npx` or `skills.sh`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.3/setup.sh | bash
 ```
 
 The menu offers:
@@ -43,7 +65,7 @@ Non-interactive setup:
 Use `install.sh` when you already know the destination path. By default, it installs into `~/.codex/skills`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.3/install.sh | bash
 ```
 
 Override the destination:
@@ -70,7 +92,7 @@ Environment variables also work:
 ```bash
 CODEX_SKILLS_DIR=/path/to/skills ./install.sh
 AGENT_SKILLS_DIR=/path/to/skills ./install.sh
-AGENT_DELIVERY_KIT_REF=v0.1.2 ./setup.sh --agent codex
+AGENT_DELIVERY_KIT_REF=v0.1.3 ./setup.sh --agent codex
 ```
 
 ## Claude-Compatible Clients
@@ -111,4 +133,5 @@ Validate the source checkout:
 
 ```bash
 scripts/validate-skills.sh
+npx skills@latest add jppotess/skills -l
 ```

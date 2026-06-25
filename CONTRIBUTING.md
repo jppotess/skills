@@ -21,6 +21,7 @@ Run:
 
 ```bash
 scripts/validate-skills.sh
+npx skills@latest add jppotess/skills -l
 ./setup.sh --agent both --dry-run
 ./install.sh --dry-run
 ```

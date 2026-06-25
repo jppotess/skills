@@ -16,13 +16,15 @@ run $ship-pr when the branch should become a GitHub PR
 
 ## 1. Install Once
 
-For Codex:
+Recommended installer:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/setup.sh | bash
+npx skills@latest add jppotess/skills
 ```
 
-Choose `Codex` from the menu. This installs:
+In the installer, choose the agent or agents you use. Install all five skills for the full workflow, or at minimum install `delivery-kit-setup` plus the work skill you want to use.
+
+For Codex, this installs skills under:
 
 ```text
 ~/.codex/skills/delivery-kit-setup
@@ -32,11 +34,12 @@ Choose `Codex` from the menu. This installs:
 ~/.codex/skills/coderabbit-gate
 ```
 
-For another agent runtime, choose the matching menu option or pass flags directly:
+Fallback setup without `skills.sh`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/setup.sh | bash -s -- --agent claude
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/setup.sh | bash -s -- --agent custom --dest /path/to/agent/skills
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.3/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.3/setup.sh | bash -s -- --agent claude
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.3/setup.sh | bash -s -- --agent custom --dest /path/to/agent/skills
 ```
 
 ## 2. Open A Real Project Repo

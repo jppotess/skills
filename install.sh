@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO_URL="${AGENT_DELIVERY_KIT_REPO:-https://github.com/jppotess/skills}"
-REPO_REF="${AGENT_DELIVERY_KIT_REF:-v0.1.2}"
+REPO_REF="${AGENT_DELIVERY_KIT_REF:-v0.1.3}"
 ARCHIVE_URL="${REPO_URL}/archive/refs/tags/${REPO_REF}.tar.gz"
 DEST_DIR="${CODEX_SKILLS_DIR:-${AGENT_SKILLS_DIR:-${HOME}/.codex/skills}}"
 DRY_RUN=0
