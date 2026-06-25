@@ -11,6 +11,7 @@ Agent Delivery Kit is intentionally small. Contributions should preserve the pub
   - `.claude-plugin/plugin.json`
   - `README.md`
   - `docs/skill-reference.md`
+  - `setup.sh`
   - `install.sh`
   - `scripts/validate-skills.sh`
 
@@ -20,6 +21,7 @@ Run:
 
 ```bash
 scripts/validate-skills.sh
+./setup.sh --agent both --dry-run
 ./install.sh --dry-run
 ```
 

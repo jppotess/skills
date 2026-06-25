@@ -2,7 +2,8 @@
 set -euo pipefail
 
 REPO_URL="${AGENT_DELIVERY_KIT_REPO:-https://github.com/jppotess/skills}"
-ARCHIVE_URL="${REPO_URL}/archive/refs/heads/main.tar.gz"
+REPO_REF="${AGENT_DELIVERY_KIT_REF:-v0.1.2}"
+ARCHIVE_URL="${REPO_URL}/archive/refs/tags/${REPO_REF}.tar.gz"
 DEST_DIR="${CODEX_SKILLS_DIR:-${AGENT_SKILLS_DIR:-${HOME}/.codex/skills}}"
 DRY_RUN=0
 LIST_ONLY=0
@@ -32,6 +33,7 @@ Environment:
   CODEX_SKILLS_DIR            Destination override.
   AGENT_SKILLS_DIR            Fallback destination override.
   AGENT_DELIVERY_KIT_REPO     Repository URL for one-command remote install.
+  AGENT_DELIVERY_KIT_REF      Git tag/ref for remote archive installs.
 USAGE
 }
 

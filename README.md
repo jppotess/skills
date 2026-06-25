@@ -6,10 +6,10 @@ This is a small public bundle for Codex-first workflows with Claude-compatible m
 
 ## Install
 
-One-command install for Codex-compatible skill directories:
+Guided setup lets you choose Codex, Claude-compatible, generic agents, both Codex and Claude, or a custom skill root:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/setup.sh | bash
 ```
 
 From a local clone:
@@ -17,10 +17,25 @@ From a local clone:
 ```bash
 git clone https://github.com/jppotess/skills.git
 cd skills
-./install.sh
+./setup.sh
 ```
 
-By default, skills are installed into `~/.codex/skills`. Override the destination when using another agent client or a custom skill root:
+Non-interactive examples:
+
+```bash
+./setup.sh --agent codex
+./setup.sh --agent claude
+./setup.sh --agent both
+./setup.sh --agent custom --dest /path/to/agent/skills
+```
+
+Direct Codex install is still available:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/install.sh | bash
+```
+
+Override the destination when using the direct installer:
 
 ```bash
 ./install.sh --dest ~/.codex/skills
@@ -152,7 +167,8 @@ The validator checks skill frontmatter, the Claude plugin manifest, expected bun
 ```text
 codex/skills/<skill-name>/      Skill source of truth
 .claude-plugin/plugin.json      Claude-compatible bundle manifest
-install.sh                      Portable installer
+setup.sh                        Guided setup for common agents
+install.sh                      Direct installer
 scripts/                        Validation and compatibility helpers
 docs/                           Public docs and launch notes
 ```

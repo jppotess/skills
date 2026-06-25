@@ -13,6 +13,15 @@ EXPECTED_SKILLS=(
   coderabbit-gate
 )
 
+for shell_script in install.sh setup.sh scripts/install-delivery-skills.sh scripts/validate-skills.sh; do
+  if [[ -f "${REPO_ROOT}/${shell_script}" ]]; then
+    if ! bash -n "${REPO_ROOT}/${shell_script}"; then
+      echo "FAIL ${shell_script}: shell syntax check failed" >&2
+      status=1
+    fi
+  fi
+done
+
 validate_skill() {
   local skill_file="$1"
   local name

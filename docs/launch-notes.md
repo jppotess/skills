@@ -38,6 +38,12 @@ Repo:
 
 https://github.com/jppotess/skills
 
+Install:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jppotess/skills/v0.1.2/setup.sh | bash
+```
+
 ## README Tagline Options
 
 - Reusable skills for verified agent delivery.
